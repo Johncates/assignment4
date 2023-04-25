@@ -1,7 +1,7 @@
 // set the dimensions and margins of the graph
 const margin = {top: 30, right: 10, bottom: 10, left: 0},
-    width = 500 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+    width = 1100 - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 const svg = d3.select("#my_dataviz")
@@ -17,7 +17,7 @@ d3.csv("https://raw.githubusercontent.com/utk-sis/insc489-21Spring/main/assingme
 
     // Extract the list of dimensions we want to keep in the plot. Here I keep all except the column called Species
     let dimensions = Object.keys(data[0]).filter(function (d) {
-        return d !== "quality"
+        return d !== "density"
     })
 
     // For each dimension, I build a linear scale. I store all in a y object
@@ -47,7 +47,7 @@ d3.csv("https://raw.githubusercontent.com/utk-sis/insc489-21Spring/main/assingme
         .join("path")
         .attr("d",  path)
         .style("fill", "none")
-        .style("stroke", "#69b3a2")
+        .style("stroke", "#a10332")
         .style("opacity", 0.5)
 
     // Draw the axis:
